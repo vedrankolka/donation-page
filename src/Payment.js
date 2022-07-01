@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import {useSearchParams} from 'react-router-dom';
 import {Elements} from '@stripe/react-stripe-js';
 import CheckoutForm from './CheckoutForm'
+import backendAddress from './Constants'
 
 function Payment(props) {
   const { stripePromise } = props;
@@ -14,7 +15,7 @@ function Payment(props) {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("/create-payment-intent?amount=" + amount)
+    fetch(backendAddress + "/create-payment-intent?amount=" + amount)
       .then((res) => res.json())
       .then(({clientSecret}) => setClientSecret(clientSecret));
   }, [amount]);

@@ -2,6 +2,7 @@ import './App.css';
 import Payment from './Payment'
 import Completion from './Completion'
 import About from './About'
+import backendAddress from './Constants'
 
 import {useEffect, useState} from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
@@ -13,7 +14,7 @@ function App() {
   const [ stripePromise, setStripePromise ] = useState(null);
 
   useEffect(() => {
-    fetch("/config").then(async (r) => {
+    fetch(backendAddress + "/config").then(async (r) => {
       if (!r.ok) {
         console.log("Response is not OK: " + r.message);
       }
