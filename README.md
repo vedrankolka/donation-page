@@ -28,3 +28,10 @@ This will start the react server running on localhost:3000. Note that the
 backend servers run on localhost:4242, but the React UI will be available at
 localhost:3000. API requests to your backend are proxied by the
 create-react-app server using the `proxy` setting in `./package.json`.
+
+## TODO
+- [ ] extract stuff (like backend url) to .env and read from env
+- [ ] add multistage Dockerfile
+- [x] change displayed currency to EUR
+- [ ] enforce a minimum donation amount
+- [ ] enfoce all fields to be filled before donating
