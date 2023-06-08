@@ -9,9 +9,9 @@ function Payment(props) {
   const [ clientSecret, setClientSecret ] = useState('');
 
   const [ searchParams, setSearchParams ] = useSearchParams();
-  var amountInHRK = searchParams.get('amount');
-  // set amount in lipas
-  var amount = parseInt(amountInHRK) * 100;
+  var amountInEUR = searchParams.get('amount');
+  // set amount in cents
+  var amount = parseInt(amountInEUR) * 100;
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads

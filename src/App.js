@@ -20,7 +20,7 @@ function App() {
       }
 
       const { publishableKey } = await r.json();
-      console.log(publishableKey);
+      console.log("PUBLISHABLE_KEY = " + publishableKey);
       setStripePromise(loadStripe(publishableKey));
     })
     .catch(error => {

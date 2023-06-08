@@ -26,7 +26,7 @@ function Donation(props) {
                     <OutlinedInput
                         id="donation-amount"
                         onChange={handleChange}
-                        endAdornment={<InputAdornment position="end">HRK</InputAdornment>}
+                        endAdornment={<InputAdornment position="end">EUR</InputAdornment>}
                         aria-describedby="amount-helper-text"
                         inputProps={{
                         'aria-label': 'amount',
