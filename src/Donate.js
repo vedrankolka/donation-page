@@ -32,7 +32,6 @@ function Donation(props) {
                         'aria-label': 'amount',
                         }}
                     />
-                    
                     </FormControl>
                 </div>
             <Link to={"/payment?amount=" + amount} className="DonationLink">Donate</Link>
