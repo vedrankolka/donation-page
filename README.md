@@ -31,7 +31,8 @@ create-react-app server using the `proxy` setting in `./package.json`.
 
 ## TODO
 - [ ] extract stuff (like backend url) to .env and read from env
-- [ ] add multistage Dockerfile
+- [x] add multistage Dockerfile
 - [x] change displayed currency to EUR
 - [ ] enforce a minimum donation amount
 - [ ] enfoce all fields to be filled before donating
+- [ ] update README
