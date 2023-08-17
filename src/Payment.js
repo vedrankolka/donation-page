@@ -2,11 +2,11 @@ import {useEffect, useState} from 'react';
 import {useSearchParams} from 'react-router-dom';
 import {Elements} from '@stripe/react-stripe-js';
 import CheckoutForm from './CheckoutForm'
-import backendAddress from './Constants'
 
 function Payment(props) {
   const { stripePromise } = props;
   const [ clientSecret, setClientSecret ] = useState('');
+  const backendAddress = process.env.REACT_APP_DONATION_SERVER_URL
 
   const [ searchParams, setSearchParams ] = useSearchParams();
   var amountInEUR = searchParams.get('amount');
@@ -18,7 +18,7 @@ function Payment(props) {
     fetch(backendAddress + "/create-payment-intent?amount=" + amount)
       .then((res) => res.json())
       .then(({clientSecret}) => setClientSecret(clientSecret));
-  }, [amount]);
+  }, [amount, backendAddress]);
 
   return (
     <>

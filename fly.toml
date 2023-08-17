@@ -12,4 +12,4 @@ primary_region = "waw"
   dockerfile = "Dockerfile"
 
 [env]
-  DONATION_SERVER_URL = "TODO"
+  REACT_APP_DONATION_SERVER_URL = "https://donation-server.fly.dev"
