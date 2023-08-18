@@ -11,15 +11,24 @@ const defaultDonationAmount = 10;
 function Donation(props) {
 
     const [ amount, setAmount ] = React.useState("10")
-
     const handleChange = event => {
         if (event.target.value === "") {
             setAmount(defaultDonationAmount)
         } else {
-            const newValue = parseFloat(event.target.value)
+            const newValue = Math.round(parseFloat(event.target.value) * 100) / 100
             setAmount(newValue)
         }
     }
+
+    const [buttonText, setButtonText] = React.useState("Donate " + defaultDonationAmount + " EUR");
+
+    React.useEffect(() => {
+        if (amount > 0) {
+            setButtonText("Donate " + amount + " EUR");
+        } else {
+            setButtonText("Donate");
+        }
+    }, [amount]);
     
     return (
         <div className="Donation">
@@ -28,6 +37,7 @@ function Donation(props) {
             <div>
                 <img alt="PleaseDonate.jpeg" src={pleaseDonate} width="240" height="140"/>
             </div>
+            <div hidden={amount < minimumDonationAmount}><br/></div>
             <div hidden={amount === undefined || isNaN(amount) || amount >= minimumDonationAmount}>
                 Because of fees, the minimum amount is {minimumDonationAmount} EUR.
             </div>
@@ -50,9 +60,8 @@ function Donation(props) {
                 variant="contained"
                 disabled={amount === undefined || isNaN(amount) || amount < minimumDonationAmount}
                 href={"/payment?amount=" + amount}>
-                Donate
+                {buttonText}
             </Button>
-
         </div>
     )
 }
