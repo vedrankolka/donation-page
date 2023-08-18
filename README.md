@@ -33,7 +33,7 @@ create-react-app server using the `proxy` setting in `./package.json`.
 - [x] extract stuff (like backend url) to .env and read from env
 - [x] add multistage Dockerfile
 - [x] change displayed currency to EUR
-- [ ] enforce a minimum donation amount
-- [ ] enfoce all fields to be filled before donating
+- [x] enforce a minimum donation amount
+- [ ] enforce all fields to be filled before donating
 - [ ] update README
 - [x] change favicon.ico

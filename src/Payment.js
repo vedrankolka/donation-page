@@ -7,6 +7,7 @@ function Payment(props) {
   const { stripePromise } = props;
   const [ clientSecret, setClientSecret ] = useState('');
   const backendAddress = process.env.REACT_APP_DONATION_SERVER_URL
+  console.log("backend address: " + backendAddress)
 
   const [ searchParams, setSearchParams ] = useSearchParams();
   var amountInEUR = searchParams.get('amount');
