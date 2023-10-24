@@ -9,22 +9,23 @@ To run the React client locally:
 
 1. Install dependencies
 
-From this directory run:
+    From this directory run:
 
-```sh
-npm install
-```
+    ```sh
+    npm install
+    ```
 
 2. Start the react app
 
-```sh
-npm start
-```
+    ```sh
+    npm start
+    ```
 
 This will start the react server running on localhost:3000. API requests to the backend are proxied by the
 create-react-app server using the `proxy` setting in `./package.json`.
 
 ## How to deploy to Fly.io
+
 [Fly.io](https://fly.io) offers an easy (and free for 2 small machines) way to deploy apps using
 a [`Dockerfile`](./Dockerfile) and a [`fly.toml`](./fly.toml).
 To build the docker image on your own machine (because building on Fly isn't free)
@@ -37,8 +38,8 @@ fly deploy --vm-size shared-cpu-1x --local-only
 The `vm-size` specifies the small (free) machine, while `local-only` flag specifies that the image should be built locally,
 which means Docker should be running.
 
-
 ## TODO
+
 - [x] extract stuff (like backend url) to .env and read from env
 - [x] add multistage Dockerfile
 - [x] change displayed currency to EUR
@@ -46,4 +47,4 @@ which means Docker should be running.
 - [ ] enforce all fields to be filled before donating
 - [x] update README
 - [x] change favicon.ico
-- [ ] add deployment workflow for GitHub Actions
+- [x] add deployment workflow for GitHub Actions
