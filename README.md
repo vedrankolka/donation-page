@@ -46,3 +46,4 @@ which means Docker should be running.
 - [ ] enforce all fields to be filled before donating
 - [x] update README
 - [x] change favicon.ico
+- [ ] add deployment workflow for GitHub Actions
